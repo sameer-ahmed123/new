@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  <div class="container mt-2">
+
+    <div class="p-2 m-2">
+
+
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
+
+<!--                <img-->
+<!--                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""-->
+<!--                class="" style="height: 150px;">-->
+            <!-- <hr> -->
+            <div class="display-8">Edit the shipment</div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border rounded">update fields</h3>
+            <form action="/add-shipment" method="POST">
+                {% csrf_token %}
+
+
+                <!-- userLocation -->
+                <div class="form-group">
+                    <label for="">userLocation</label>
+                    <input  type="text" name="userLocation" placeholder="userLocation"
+                    id="" value="{{edt.userLocation}}" class="form-control form-control-sm"
+                    >
+                </div>
+
+                <!-- NoOfBoxes -->
+                <div class="form-group">
+                    <label for="">NoOfBoxes</label>
+                    <input type="number" name="NoOfBoxes"
+                    id="" class="form-control form-control-sm"
+                    value="{{edt.NoOfBoxes}}"
+                    placeholder="NoOfBoxes"
+                    >
+                </div>
+                <!-- recieverLocation -->
+                <div class="form-group">
+                    <label for="">recieverLocation</label>
+                    <input type="text" name="recieverLocation"
+                    id="" class="form-control form-control-sm"
+                    value="{{edt.recieverLocation}}"
+                    placeholder="recieverLocation"
+                    >
+                </div>
+
+
+                <!-- mfd -->
+                <div class="form-group">
+                    <label for="">recievername</label>
+                    <input type="text"
+                    name="recievername"
+                    id="" value="{{edt.recievername}}"
+                     class="form-control form-control-sm" placeholder="recievername">
+                </div>
+
+                <!--  erecieverphone-->
+                <div class="form-group">
+                    <label for="">recieverphone</label>
+                    <input type="text"
+                    name="recieverphone" value="{{edt.recieverphone}}"
+                    id=""
+                     class="form-control form-control-sm" placeholder="recieverphone">
+                </div>
+
+<!--&lt;!&ndash;            &lt;!&ndash;  erecieverphone&ndash;&gt;&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label for="">status</label>-->
+<!--                    <input type="checkbox"-->
+<!--                    name="status">-->
+<!--                </div>-->
+
+                 <div class="form-group">
+                    <label for="">Status</label>
+                     <select>
+                         {% for options in options %}
+                         <option value="{{options.CHOICES}}">{{options.statuses}}</option>
+                         {% endfor %}
+                     </select>
+                </div>
+                <hr>
+                {{form.statuses}}
+                <div class="form-group">
+                    <input class="btn btn-sm btn-info" type="submit" value="update ">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Multiple user login</title>
+  </head>
+  <body>
+<div class="container mt-2">
+
+    <div class="p-2 m-2">
+
+
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
+
+<!--                <img-->
+<!--                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""-->
+<!--                class="" style="height: 150px;">-->
+            <!-- <hr> -->
+            <div class="display-8">Add Products</div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border rounded">Add Medicine</h3>
+            <form action="/add_medicine" method="POST">
+                {% csrf_token %}
+                <!-- name -->
+                <div class="form-group">
+                    <label for=""> Product Name</label>
+                    <input type="text" name="name"
+                     id="" value="" class="form-control form-control-sm"
+                     placeholder="Name">
+                </div>
+
+                <!-- price -->
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <input type="text" name="price" placeholder="Price"
+                    id="" value="" class="form-control form-control-sm"
+                    >
+                </div>
+
+                <!-- company -->
+                <div class="form-group">
+                    <label for="">Company</label>
+                    <input type="text" name="company"
+                    id="" class="form-control form-control-sm"
+                    value=""
+                    placeholder="Company"
+                    >
+                </div>
+                <!-- description -->
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <textarea class=" form-control-sm form-control" name="description">Enter text here...</textarea>
+<!--                    <input required type="" name="description" id=""-->
+<!--                    value=""-->
+<!--                    class=" form-control-sm form-control" placeholder="Description">-->
+                </div>
+
+
+                <!-- mfd -->
+                <div class="form-group">
+                    <label for="">MFD</label>
+                    <input type="date"
+                    name="mfd"
+                    id=""
+                     class="form-control form-control-sm" placeholder="MFD">
+                </div>
+
+                <!--  expire date-->
+                <div class="form-group">
+                    <label for="">Expire Date</label>
+                    <input type="date"
+                    name="expire_date"
+                    id=""
+                     class="form-control form-control-sm" placeholder="Expire Date">
+                </div>
+
+
+                <hr>
+                <div class="form-group">
+                    <input class="btn btn-sm btn-info" type="submit" value="Add Medicine ">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
